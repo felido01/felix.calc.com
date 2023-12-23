@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> A Calculator</title>
+</head>
+<link rel="stylesheet" href="calculator.css">
+<style>
+  button{
+    width: 75px;
+    height: 60px;
+    border: 1px;
+    /* background-color: rgb(71, 70, 70); */
+    background-color: transparent;
+    /* color:; */
+    font-size: xx-large;
+    border-radius: 5px;
+    margin: 4px;
+    margin-top: 16px;
+    font-weight: bolder;
+    box-shadow: 0px 1px 1px 2px black;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  #edit-b{
+
+    width: 165px;
+  }
+  input{
+    box-shadow: 0px 0px 2px 2px black;
+    border: 1px black;
+    border-radius: 14px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    
+    width: 340px;
+    text-align: end;
+    /* margin-right: 10px; */
+    height: 80px;
+    color: black
+    ;
+    font-size: 60px;
+    background-color: transparent;
+    /* grid-column:auto; */
+   
+    
+  }
+  #div-1{
+    font-display:inherit;
+    width: 370px;
+    background-color: transparent;
+    padding-left: 0px;
+    margin-left: 0px;
+    margin: 0 auto;
+    padding-top: 60px;
+    text-align: center;
+    height: 14.5cm;
+    border: 1px;
+    border-radius: 19px;
+    background-color: transparent;
+  box-shadow: 0px white 6px 0px  1px ;
+    
+  }
+  body{
+ 
+ padding-top: 15px;
+ background-image: url(scott-webb-mV9-1XjnM4Y-unsplash.jpg);
+ background-position: center;
+ background-size: cover;
+ outline: none;
+ font-family: sans-serif;
+
+}
+  #div-2{
+    font-weight: bolder;
+    /* color: rgb(238, 234, 234); */
+    color:rgb(3, 3, 90);
+    font-family: Georgia, 'Times New Roman', Times, serif ;
+    font-size:xx-large;
+  }
+  a{
+    color:white ;
+  }
+  #div-4{
+    color: rgb(11, 12, 14);
+    font-weight: bolder;
+  }
+
+
+</style>
+<body>
+  <div id="div-1">
+   <div id="div-2">FELIX</a></div><br>
+  <input type="text" placeholder="0" id="input-1"> 
+  <div>
+    
+  <button onclick="ac()">AC</button>
+  <button onclick="del()"> DEL</button>
+  <button onclick="calculate('%')">%</button>
+  <button onclick="calculate('/')">/</button> 
+  <br>
+
+  <button onclick="calculate('7')">7</button>
+  <button onclick="calculate('8')">8</button>
+  <button onclick="calculate('9')">9</button>
+  <button onclick="calculate('*')">*</button>
+  <br>
+  <button onclick="calculate('4')">4</button>
+  <button onclick="calculate('5')">5</button>
+  <button onclick="calculate('6')">6</button>
+  <button onclick="calculate('-')">-</button>
+  <br>
+  <button onclick="calculate('1')">1</button>
+  <button onclick="calculate('2')">2</button>
+  <button onclick="calculate('3')">3</button>
+  <button onclick="calculate('+')">+</button>
+  <br>
+  <button onclick="calculate('.')">.</button>
+<!-- <button onclick="calculate()">
+  AC
+</button> -->
+  <button onclick="calculate('0')">0</button>
+  <button id="edit-b" onclick="Result()">=</button><div id="div-4">
+    click <a href="http://127.0.0.1:5500/felix.%20calc.html">felix.calc</a> to have access to the code
+
+  </div>
+
+  </div>
+  </div>
+  
+
+
+  <script>
+   let result= document.getElementById(`input-1`);
+   let calculate=(number) => {result.value=result.value+number}
+   let Result=() =>{
+    try{
+      result.value= eval(result.value)
+    }
+    catch(err){
+      alert('Enter the valid input')
+    }
+   }
+   function ac(){
+    // result.value= " 0";
+    result.value=result.value.slice(-1,-1)
+   }
+   function del() {
+    result.value=result.value.slice(0,-1)
+   }
+
+  </script>
+</body>
+</html>
